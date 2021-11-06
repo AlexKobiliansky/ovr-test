@@ -1,0 +1,26 @@
+@import "../../vars"
+@import "../../mixins"
+
+.nav-item
+  display: flex
+  padding: 11px 19px
+  align-items: center
+  text-decoration: none
+  font-weight: 500
+  border-radius: 4px
+  color: #66788a
+  +mt(.3s)
+  svg
+    fill: #66788a
+    margin-right: 8px
+  &:hover
+    color: #212529
+    background-color: #F6F9FD
+    svg
+      fill: $primary
+  &.active
+    box-shadow: inset 3px 0 0 #1665D8
+    color: #212529
+    background-color: #F6F9FD
+    svg
+      fill: $primary
