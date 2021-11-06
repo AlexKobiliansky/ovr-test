@@ -1,9 +1,10 @@
 import React from 'react';
+import UsersTopLine from '../components/UsersTopLine/UsersTopLine';
 
 const UsersPage = () => {
   return (
     <div>
-      Users Page
+      <UsersTopLine />
     </div>
   );
 };
