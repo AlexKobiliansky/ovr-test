@@ -1,8 +1,10 @@
-import {SET_LOADING_USERS, SET_USERS} from "../types";
+import {SEARCH_DATA_USERS, SEARCH_QUERY_USERS, SET_LOADING_USERS, SET_USERS} from "../types";
 
 const defaultState = {
   isLoading: false,
   users: [],
+  search: '',
+  searchData: [],
 }
 
 export default function usersReducer (state=defaultState, action) {
@@ -17,6 +19,16 @@ export default function usersReducer (state=defaultState, action) {
         ...state,
         users: action.payload,
         isLoading: false
+      }
+    case SEARCH_QUERY_USERS:
+      return {
+        ...state,
+        search: action.payload
+      }
+    case SEARCH_DATA_USERS:
+      return {
+        ...state,
+        searchData: action.payload
       }
     default:
       return state

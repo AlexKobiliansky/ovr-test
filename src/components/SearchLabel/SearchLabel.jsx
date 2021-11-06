@@ -1,8 +1,9 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {InputAdornment, Input} from '@mui/material';
 import {makeStyles} from '@mui/styles';
 import SearchIcon from '@mui/icons-material/SearchRounded';
 import './SearchLabel.sass';
+import {useSelector} from 'react-redux';
 
 const useStyles = makeStyles({
   input: {
@@ -16,15 +17,20 @@ const useStyles = makeStyles({
   },
 });
 
-const SearchLabel = () => {
+const SearchLabel = ({onSearch}) => {
   const classes = useStyles();
-  const [value, setValue] = useState('');
+  const {search} = useSelector(({users}) => users);
+
+  const handleChange = e => {
+    onSearch(e);
+  }
+
   return (
     <div className="search-label">
       <Input
         className={classes.input}
-        value={value}
-        onChange={(e) => setValue(e.target.value)}
+        value={search}
+        onChange={handleChange}
         placeholder="Search users by name, id"
         startAdornment={<InputAdornment position="start"><SearchIcon sx={{color: '#9EA0A5'}}/></InputAdornment>}
       />

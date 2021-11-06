@@ -1,25 +1,36 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
-import {fetchUsers} from '../redux/actions/usersActions';
+import {fetchUsers, searchQueryUsers, setSearchDataUsers} from '../redux/actions/usersActions';
 import UsersTopLine from '../components/UsersTopLine/UsersTopLine';
 import UsersTable from '../components/UsersTable/UsersTable';
 
 const UsersPage = () => {
   const dispatch = useDispatch();
-  const {isLoading, users} = useSelector(({users}) => users);
-  // const [users, setUsers] = useState([]);
+  const {isLoading, users, search, searchData} = useSelector(({users}) => users);
 
   useEffect(() => {
     dispatch(fetchUsers());
   }, []);
 
+  const handleSearch = (e) => {
+    let str = e.target.value.toLowerCase();
+    dispatch(searchQueryUsers(str));
+
+    const newArr = users.filter(item =>
+      item.id.toString().toLowerCase().includes(str) ||
+      item.name.toLowerCase().includes(str)
+    );
+
+    dispatch(setSearchDataUsers(newArr));
+  }
+
   return (
     <>
-      <UsersTopLine />
+      <UsersTopLine onSearch={handleSearch} />
       {
         isLoading
           ? 'Loading Users...'
-          : <UsersTable users={users} />
+          : <UsersTable users={search.length > 0 ? searchData : users} />
       }
     </>
   );

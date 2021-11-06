@@ -1,3 +1,5 @@
 //users
 export const SET_LOADING_USERS = "SET_LOADING_USERS";
 export const SET_USERS = "SET_USERS";
+export const SEARCH_QUERY_USERS = "SEARCH_QUERY_USERS";
+export const SEARCH_DATA_USERS = "SEARCH_DATA_USERS";

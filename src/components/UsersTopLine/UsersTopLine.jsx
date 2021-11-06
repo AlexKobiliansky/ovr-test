@@ -20,7 +20,7 @@ const FilterButton = styled(Button)(() => ({
   },
 }));
 
-const UsersTopLine = () => {
+const UsersTopLine = ({onSearch}) => {
   return (
     <div className="users-topline">
       <div className="users-topline-filters">
@@ -31,7 +31,7 @@ const UsersTopLine = () => {
         >
           Filter
         </FilterButton>
-        <SearchLabel />
+        <SearchLabel onSearch={onSearch} />
       </div>
 
       <Button variant="contained" startIcon={<AddOutlinedIcon />}>
