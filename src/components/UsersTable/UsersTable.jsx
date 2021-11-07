@@ -11,7 +11,7 @@ import TablePagination from '@mui/material/TablePagination';
 import UsersTableHead from './UsersTableHead';
 import UserBadge from '../UserBadge/UserBadge';
 
-const UsersTable = ({users}) => {
+const UsersTable = ({users, onPickUser}) => {
   const [selected, setSelected] = React.useState([]);
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(5);
@@ -84,7 +84,7 @@ const UsersTable = ({users}) => {
                   return (
                     <TableRow
                       hover
-                      onClick={(e) => console.log('open popup')}
+                      onClick={(e) => onPickUser(row)}
                       role="checkbox"
                       aria-checked={isItemSelected}
                       tabIndex={-1}
