@@ -1,0 +1,80 @@
+@import '../../vars'
+@import '../../mixins'
+
+.feature
+  padding: 20px 24px 30px 24px
+  $self: &
+  &-top
+    display: flex
+    justify-content: space-between
+    margin-bottom: 24px
+  &-title
+    font-weight: 700
+    color: #66788A
+    font-size: 12px
+    line-height: 16px
+    margin-bottom: 8px
+    text-transform: uppercase
+    letter-spacing: 0.996px
+  &-value
+    font-weight: 500
+    font-size: 24px
+    line-height: 28px
+    color: #212529
+    margin-bottom: 8px
+  &-icon-wrap
+    width: 64px
+    height: 64px
+    border-radius: 50%
+    display: flex
+    align-items: center
+    justify-content: center
+    svg
+      fill: #fff
+  &-bottom
+    font-size: 12px
+    line-height: 14px
+  &.accent
+    background-color: $primary
+    color: #fff
+    #{$self}-title, #{$self}-value
+      color: #fff
+    #{$self}-conversion
+      &-value
+        color: #fff
+        &.increase
+          &:before
+            +arrow-up(5px, #fff)
+          &.decrease
+            color: $red
+            &:before
+              +arrow-down(5px, #fff)
+      &-desc
+        color: #fff
+
+
+.feature-conversion
+  &-value
+    display: inline-block
+    padding-left: 18px
+    position: relative
+    margin-right: 8px
+    font-weight: 500
+    color: $green
+    &:before
+      content: ''
+      position: absolute
+      left: 0
+      top: 50%
+      transform: translateY(-50%)
+    &.increase
+      &:before
+        +arrow-up(5px, $green)
+    &.decrease
+        color: $red
+        &:before
+          +arrow-down(5px, $red)
+  &-desc
+    color: #66788A
+
+

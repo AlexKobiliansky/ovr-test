@@ -1,10 +1,11 @@
 import React from 'react';
+import Features from '../components/Features/Features';
 
 const DashboardPage = () => {
   return (
-    <div>
-      Dashboard Page
-    </div>
+    <>
+      <Features />
+    </>
   );
 };
 
