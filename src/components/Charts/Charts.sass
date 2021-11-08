@@ -1,8 +1,7 @@
 .charts-wrap
-  display: flex
-  gap: 30px
-  &>div
-    &:first-child
-      width: 75%
-    &:last-child
-      width: 23.5%
+  display: grid
+  grid-gap: 30px
+  grid-template-columns: repeat(4, 1fr)
+  &>div:first-child
+    grid-column-start: 1
+    grid-column-end: 4

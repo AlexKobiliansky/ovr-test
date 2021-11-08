@@ -2,13 +2,11 @@ import React, {useState} from 'react';
 import {Link} from 'react-router-dom';
 import {MenuItem, Paper} from '@mui/material';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
-import {nFormatter} from '../utils/nFormatter';
-import PaperHeader from '../components/PaperHeader/PaperHeader';
-import PaperFooter from '../components/PaperFooter/PaperFooter';
-import {CustomSelect} from '../components/ui/CustomSelect/CutomSelect';
+import {nFormatter} from '../../utils/nFormatter';
+import PaperHeader from '../PaperHeader/PaperHeader';
+import PaperFooter from '../PaperFooter/PaperFooter';
+import {CustomSelect} from '../ui/CustomSelect/CutomSelect';
 import './CustomBarChart.sass';
-
-
 
 const data = {
   week: [
