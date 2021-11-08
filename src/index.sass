@@ -35,3 +35,20 @@ ul
   list-style-type: none
   margin: 0
 
+.accent-link
+  text-decoration: none
+  display: inline-block
+  position: relative
+  font-weight: 500
+  color: #1070CA
+  padding-right: 14px
+  &:hover
+    text-decoration: underline
+  &:after
+    content: ''
+    position: absolute
+    +arrow-right(5px, #1070CA)
+    right: 0
+    top: 50%
+    transform: translateY(-50%)
+
