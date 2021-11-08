@@ -1,0 +1,29 @@
+@import '../../vars'
+
+.last-product
+  display: flex
+  justify-content: space-between
+  align-items: center
+  padding: 20px 0
+  border-bottom: 1px solid #E4E7EB
+  &:last-child
+    border-bottom: none
+  &-img
+    max-width: 64px
+  &-info
+    flex-grow: 1
+    padding-left: 32px
+    padding-right: 10px
+  &-title
+    display: inline-block
+    color: inherit
+    font-weight: 500
+    font-size: 16px
+    text-decoration: none
+    margin-bottom: 4px
+    &:hover
+      color: $primary
+  &-updated
+    color: #9EA0A5
+    font-size: 12px
+    line-height: 16px

@@ -7,9 +7,9 @@ import PaperFooter from '../PaperFooter/PaperFooter';
 import StatItem from '../StatItem/StatItem';
 import {CustomSelect} from '../ui/CustomSelect/CutomSelect';
 import CachedIcon from '@mui/icons-material/Cached';
-import desktopIcon from '../../assets/desktop.svg';
-import tabletIcon from '../../assets/tablet.svg';
-import mobileIcon from '../../assets/mobile.svg';
+import desktopIcon from '../../assets/icons/desktop.svg';
+import tabletIcon from '../../assets/icons/tablet.svg';
+import mobileIcon from '../../assets/icons/mobile.svg';
 import ArrowRightIcon from '@mui/icons-material/ArrowRight';
 import './CustomPieChart.sass';
 
