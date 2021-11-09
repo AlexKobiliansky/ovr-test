@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/ovr-test/static/css/main.20ca22db.chunk.css",
+    "main.js": "/ovr-test/static/js/main.2fd72134.chunk.js",
+    "main.js.map": "/ovr-test/static/js/main.2fd72134.chunk.js.map",
+    "runtime-main.js": "/ovr-test/static/js/runtime-main.c4d0e0aa.js",
+    "runtime-main.js.map": "/ovr-test/static/js/runtime-main.c4d0e0aa.js.map",
+    "static/js/2.11e2c8ad.chunk.js": "/ovr-test/static/js/2.11e2c8ad.chunk.js",
+    "static/js/2.11e2c8ad.chunk.js.map": "/ovr-test/static/js/2.11e2c8ad.chunk.js.map",
+    "index.html": "/ovr-test/index.html",
+    "static/css/main.20ca22db.chunk.css.map": "/ovr-test/static/css/main.20ca22db.chunk.css.map",
+    "static/js/2.11e2c8ad.chunk.js.LICENSE.txt": "/ovr-test/static/js/2.11e2c8ad.chunk.js.LICENSE.txt",
+    "static/media/current-user-image.feea225d.png": "/ovr-test/static/media/current-user-image.feea225d.png",
+    "static/media/desktop.bd34adba.svg": "/ovr-test/static/media/desktop.bd34adba.svg",
+    "static/media/logo.88a1e160.svg": "/ovr-test/static/media/logo.88a1e160.svg",
+    "static/media/mobile.78f8a02c.svg": "/ovr-test/static/media/mobile.78f8a02c.svg",
+    "static/media/tablet.abba0e30.svg": "/ovr-test/static/media/tablet.abba0e30.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.c4d0e0aa.js",
+    "static/js/2.11e2c8ad.chunk.js",
+    "static/css/main.20ca22db.chunk.css",
+    "static/js/main.2fd72134.chunk.js"
+  ]
+}
