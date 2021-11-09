@@ -5,7 +5,22 @@
   margin-bottom: 24px
   &-filters
     display: flex
-    justify-content: center
+    align-items: center
     max-width: 742px
     width: 100%
     margin-right: 16px
+
+@media(max-width: 1200px)
+  .users-topline
+    &-filters
+      width: auto
+
+@media(max-width: 768px)
+  .users-topline
+    flex-wrap: wrap
+    flex-direction: column-reverse
+    align-items: flex-start
+    &-filters
+      margin-right: 0
+      margin-top: 12px
+      width: 100%

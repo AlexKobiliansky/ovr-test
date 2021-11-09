@@ -18,6 +18,28 @@ const FilterButton = styled(Button)(() => ({
     borderColor: 'transparent',
     backgroundColor: 'rgba(250, 250, 250, 0.6);'
   },
+  '@media (max-width: 780px)' : {
+    fontSize: 0,
+    paddingLeft: 18,
+    minWidth: 50,
+    width: 50,
+    textAlign: 'center',
+    display: 'block',
+    justifyContent: 'center',
+    '& .MuiButton-startIcon': {
+      marginRight: 0
+    }
+  },
+  '@media (max-width: 480px)' : {
+    paddingTop: 4,
+    paddingBottom: 4
+  },
+  '@media (max-width: 390px)' : {
+    minWidth: 40,
+    width: 40,
+    marginRight: 8,
+    paddingLeft: 13,
+  }
 }));
 
 const UsersTopLine = ({onSearch}) => {
@@ -29,12 +51,12 @@ const UsersTopLine = ({onSearch}) => {
           startIcon={<FilterIcon sx={{ color: '#9EA0A5' }} />}
           onClick={() => console.log('filter')}
         >
-          Filter
+          <span>Filter</span>
         </FilterButton>
         <SearchLabel onSearch={onSearch} />
       </div>
 
-      <Button variant="contained" startIcon={<AddOutlinedIcon />}>
+      <Button variant="contained" startIcon={<AddOutlinedIcon />} >
         Add User
       </Button>
     </div>

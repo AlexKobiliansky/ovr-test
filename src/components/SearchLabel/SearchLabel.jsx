@@ -1,9 +1,9 @@
 import React from 'react';
 import {InputAdornment, Input} from '@mui/material';
 import {makeStyles} from '@mui/styles';
+import {useSelector} from 'react-redux';
 import SearchIcon from '@mui/icons-material/SearchRounded';
 import './SearchLabel.sass';
-import {useSelector} from 'react-redux';
 
 const useStyles = makeStyles({
   input: {
@@ -13,6 +13,9 @@ const useStyles = makeStyles({
     padding: '2px 10px',
     '&:before': {
       borderBottom: 'none!important',
+    },
+    '@media (max-width: 480px)' : {
+      fontSize: 12
     }
   },
 });

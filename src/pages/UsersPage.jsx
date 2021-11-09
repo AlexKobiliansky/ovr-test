@@ -52,71 +52,71 @@ const UsersPage = () => {
   return (
     <>
       <UsersTopLine onSearch={handleSearch} />
-      {
-        isLoading
-          ? 'Loading Users...'
-          : (
-            <>
-              <UsersTable
-                users={search.length > 0 ? searchData : users}
-                onPickUser={handleOpenDialog}
-              />
+      {/*{*/}
+      {/*  isLoading*/}
+      {/*    ? 'Loading Users...'*/}
+      {/*    : (*/}
+      {/*      <>*/}
+      {/*        <UsersTable*/}
+      {/*          users={search.length > 0 ? searchData : users}*/}
+      {/*          onPickUser={handleOpenDialog}*/}
+      {/*        />*/}
 
-              <Dialog
-                onClose={handleCloseDialog}
-                open={openDetails}
-                fullWidth
-                maxWidth='sm'
-              >
-                <DialogTitle onClose={handleCloseDialog}>
-                  User Details: <b>{pickedUser?.name}</b>
-                </DialogTitle>
-                <DialogContent dividers>
-                  <UserInfoRow
-                    icon={ManageAccountsIcon}
-                    title='Username'
-                    info={pickedUser?.username}
-                  />
-                  <UserInfoRow
-                    icon={PersonOutlineIcon}
-                    title='Name'
-                    info={pickedUser?.name}
-                  />
-                  <UserInfoRow
-                    icon={MailOutlineIcon}
-                    title='Email address'
-                    info={pickedUser?.email}
-                  />
-                  <UserInfoRow
-                    icon={PhoneAndroidIcon}
-                    title='Phone'
-                    info={pickedUser?.phone}
-                  />
-                  <UserInfoRow
-                    icon={HomeIcon}
-                    title='Address'
-                    info={`${pickedUser?.address?.street}, ${pickedUser?.address?.suite}, ${pickedUser?.address?.city}`}
-                  />
-                  <UserInfoRow
-                    icon={LanguageIcon}
-                    title='Website'
-                    info={pickedUser?.website}
-                  />
-                  <UserInfoRow
-                    icon={BusinessIcon}
-                    title='Company'
-                    info={pickedUser?.company?.name}
-                  />
-                </DialogContent>
-                <DialogActions>
-                  <Button autoFocus onClick={handleCloseDialog}>
-                    Close Popup
-                  </Button>
-                </DialogActions>
-              </Dialog>
-            </>
-          )
-      }
+      {/*        <Dialog*/}
+      {/*          onClose={handleCloseDialog}*/}
+      {/*          open={openDetails}*/}
+      {/*          fullWidth*/}
+      {/*          maxWidth='sm'*/}
+      {/*        >*/}
+      {/*          <DialogTitle onClose={handleCloseDialog}>*/}
+      {/*            User Details: <b>{pickedUser?.name}</b>*/}
+      {/*          </DialogTitle>*/}
+      {/*          <DialogContent dividers>*/}
+      {/*            <UserInfoRow*/}
+      {/*              icon={ManageAccountsIcon}*/}
+      {/*              title='Username'*/}
+      {/*              info={pickedUser?.username}*/}
+      {/*            />*/}
+      {/*            <UserInfoRow*/}
+      {/*              icon={PersonOutlineIcon}*/}
+      {/*              title='Name'*/}
+      {/*              info={pickedUser?.name}*/}
+      {/*            />*/}
+      {/*            <UserInfoRow*/}
+      {/*              icon={MailOutlineIcon}*/}
+      {/*              title='Email address'*/}
+      {/*              info={pickedUser?.email}*/}
+      {/*            />*/}
+      {/*            <UserInfoRow*/}
+      {/*              icon={PhoneAndroidIcon}*/}
+      {/*              title='Phone'*/}
+      {/*              info={pickedUser?.phone}*/}
+      {/*            />*/}
+      {/*            <UserInfoRow*/}
+      {/*              icon={HomeIcon}*/}
+      {/*              title='Address'*/}
+      {/*              info={`${pickedUser?.address?.street}, ${pickedUser?.address?.suite}, ${pickedUser?.address?.city}`}*/}
+      {/*            />*/}
+      {/*            <UserInfoRow*/}
+      {/*              icon={LanguageIcon}*/}
+      {/*              title='Website'*/}
+      {/*              info={pickedUser?.website}*/}
+      {/*            />*/}
+      {/*            <UserInfoRow*/}
+      {/*              icon={BusinessIcon}*/}
+      {/*              title='Company'*/}
+      {/*              info={pickedUser?.company?.name}*/}
+      {/*            />*/}
+      {/*          </DialogContent>*/}
+      {/*          <DialogActions>*/}
+      {/*            <Button autoFocus onClick={handleCloseDialog}>*/}
+      {/*              Close Popup*/}
+      {/*            </Button>*/}
+      {/*          </DialogActions>*/}
+      {/*        </Dialog>*/}
+      {/*      </>*/}
+      {/*    )*/}
+      {/*}*/}
     </>
   );
 };
