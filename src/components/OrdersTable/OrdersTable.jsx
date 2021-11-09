@@ -1,6 +1,5 @@
 import React, {useState} from 'react';
 import {
-  Box,
   TableContainer,
   Table,
   TableBody,
@@ -8,7 +7,7 @@ import {
   TableCell,
   TablePagination,
   TableHead,
-  IconButton, MenuItem, Menu, Paper
+  IconButton, MenuItem, Menu
 } from '@mui/material';
 import {makeStyles} from '@mui/styles';
 import dateFormat from "dateformat";

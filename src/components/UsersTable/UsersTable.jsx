@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import { Box,
+import {
   Paper,
   TableContainer,
   Table,
@@ -7,7 +7,8 @@ import { Box,
   TableRow,
   TableCell,
   Checkbox,
-  TablePagination } from '@mui/material';
+  TablePagination
+} from '@mui/material';
 import UsersTableHead from './UsersTableHead';
 import UserBadge from '../UserBadge/UserBadge';
 import {makeStyles} from '@mui/styles';
@@ -151,7 +152,6 @@ const UsersTable = ({users, onPickUser}) => {
         onRowsPerPageChange={handleChangeRowsPerPage}
       />
     </>
-
   );
 };
 

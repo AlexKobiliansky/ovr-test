@@ -1,8 +1,8 @@
 import React from 'react';
 import Tooltip from '@mui/material/Tooltip';
-import './Header.sass';
 import NotificationsIcon from '@mui/icons-material/NotificationsNone';
 import ExitToAppIcon from '@mui/icons-material/ExitToApp';
+import './Header.sass';
 import logo from '../../assets/logo.svg';
 
 const Header = () => {
