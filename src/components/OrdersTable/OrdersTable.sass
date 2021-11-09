@@ -1,0 +1,22 @@
+@import "../../vars"
+
+.order-status
+  display: inline-block
+  position: relative
+  color: #9EA0A5
+  padding-left: 28px
+  &-badge
+    display: inline-block
+    position: absolute
+    left: 12px
+    top: 50%
+    transform: translateY(-50%)
+    width: 8px
+    height: 8px
+    border-radius: 50%
+    &.delivered
+      background-color: $green
+    &.pending
+      background-color: $yellow
+    &.refund
+      background-color: $red
