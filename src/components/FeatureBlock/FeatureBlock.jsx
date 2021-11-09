@@ -7,7 +7,10 @@ const useStyles = makeStyles({
   progress: {
     borderRadius: 4,
     top: 7,
-    backgroundColor: '#E4E7EB'
+    backgroundColor: '#E4E7EB',
+    '@media(max-width: 480px)': {
+      top: 0
+    }
   },
 });
 
