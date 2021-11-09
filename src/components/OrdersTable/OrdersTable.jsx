@@ -36,7 +36,7 @@ const OrdersTable = ({orders}) => {
   };
 
   const emptyRows = page > 0 ? Math.max(0, (1 + page) * rowsPerPage - orders.length) : 0;
-  
+
   return (
     <Box sx={{width: '100%'}}>
       <TableContainer>
