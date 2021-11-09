@@ -1,6 +1,6 @@
 import React from 'react';
-import './Navigation.sass';
 import NavItem from '../NavItem/NavItem';
+import './Navigation.sass';
 
 const Navigation = ({title, routes}) => {
   return (
