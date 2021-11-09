@@ -1,10 +1,10 @@
 import React from 'react';
-import './LastProductItem.sass';
 import {Link} from 'react-router-dom';
 import {format} from 'timeago.js';
 import {IconButton, MenuItem} from '@mui/material';
-import MoreVertIcon from '@mui/icons-material/MoreVert';
 import Menu from '@mui/material/Menu';
+import MoreVertIcon from '@mui/icons-material/MoreVert';
+import './LastProductItem.sass';
 
 const LastProductItem = ({product : {id, title, logo, updatedAt}}) => {
   const [anchorEl, setAnchorEl] = React.useState(null);

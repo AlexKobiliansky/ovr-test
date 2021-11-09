@@ -5,3 +5,12 @@
   &>div:nth-child(2)
     grid-column-start: 2
     grid-column-end: 5
+
+
+@media(max-width: 1365px)
+  .sales-info-wrapper
+    grid-gap: 12px
+    grid-template-columns: repeat(1, 1fr)
+    &>div:nth-child(2)
+      grid-column-start: unset
+      grid-column-end: unset

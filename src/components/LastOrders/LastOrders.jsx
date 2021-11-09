@@ -9,7 +9,10 @@ import './LastOrders.sass';
 const useStyles = makeStyles({
   button: {
     marginLeft: 24,
-    padding: '5px 20px'
+    padding: '5px 20px',
+    '@media(max-width:768px)': {
+      display: 'none'
+    }
   }
 });
 

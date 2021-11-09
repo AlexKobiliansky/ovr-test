@@ -8,7 +8,7 @@ import {
   TableCell,
   TablePagination,
   TableHead,
-  IconButton, MenuItem, Menu
+  IconButton, MenuItem, Menu, Paper
 } from '@mui/material';
 import {makeStyles} from '@mui/styles';
 import dateFormat from "dateformat";
@@ -58,8 +58,8 @@ const OrdersTable = ({orders, onChangeStatus}) => {
   const emptyRows = page > 0 ? Math.max(0, (1 + page) * rowsPerPage - orders.length) : 0;
 
   return (
-    <Box sx={{width: '100%'}}>
-      <TableContainer>
+    <>
+      <TableContainer className="table-container">
         <Table
           sx={{minWidth: 750}}
           size={'small'}
@@ -137,19 +137,19 @@ const OrdersTable = ({orders, onChangeStatus}) => {
         onClose={handleCloseMenu}
       >
         {editingOrder?.status !== 'delivered' &&
-          <MenuItem
-            onClick={() => handleClickMenuItem(editingOrder?.id, 'delivered')}
-          >Set status as "Delivered"</MenuItem>}
+        <MenuItem
+          onClick={() => handleClickMenuItem(editingOrder?.id, 'delivered')}
+        >Set status as "Delivered"</MenuItem>}
         {editingOrder?.status !== 'pending' &&
-          <MenuItem
-            onClick={() => handleClickMenuItem(editingOrder?.id, 'pending')}
-          >Set status as "Pending"</MenuItem>}
+        <MenuItem
+          onClick={() => handleClickMenuItem(editingOrder?.id, 'pending')}
+        >Set status as "Pending"</MenuItem>}
         {editingOrder?.status !== 'refund' &&
-          <MenuItem
-            onClick={() => handleClickMenuItem(editingOrder?.id, 'refund')}
-          >Set status as "Refund"</MenuItem>}
+        <MenuItem
+          onClick={() => handleClickMenuItem(editingOrder?.id, 'refund')}
+        >Set status as "Refund"</MenuItem>}
       </Menu>
-    </Box>
+    </>
   );
 };
 

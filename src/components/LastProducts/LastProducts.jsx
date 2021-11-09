@@ -1,14 +1,14 @@
 import React from 'react';
-import './LastProducts.sass';
+import {Link} from 'react-router-dom';
 import {Paper} from '@mui/material';
 import PaperHeader from '../PaperHeader/PaperHeader';
+import LastProductItem from '../LastProductItem/LastProductItem';
+import PaperFooter from '../PaperFooter/PaperFooter';
 import logo1 from '../../assets/product-logo-1.png';
 import logo2 from '../../assets/product-logo-2.png';
 import logo3 from '../../assets/product-logo-3.png';
 import logo4 from '../../assets/product-logo-4.png';
-import LastProductItem from '../LastProductItem/LastProductItem';
-import {Link} from 'react-router-dom';
-import PaperFooter from '../PaperFooter/PaperFooter';
+import './LastProducts.sass';
 
 
 const products = [
