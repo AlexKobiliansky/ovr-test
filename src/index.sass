@@ -52,3 +52,20 @@ ul
     top: 50%
     transform: translateY(-50%)
 
+.adaptive-table
+  width: 95%
+  display: block
+  overflow-x: auto
+
+@media(max-width: 1200px)
+  .table-container
+    width: calc(100vw - 303px)!important
+
+@media(max-width: 978px)
+  .table-container
+    width: calc(100vw - 124px)!important
+
+@media(max-width: 480px)
+  .table-container
+    width: calc(100vw - 99px)!important
+
