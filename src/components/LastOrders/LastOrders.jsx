@@ -199,10 +199,36 @@ const orders = [
 const LastOrders = () => {
   const classes = useStyles();
   const [data, setData] = useState([]);
+  const [sortOrder, setSortOrder] = useState('newest');
 
   useEffect(() => {
-    setData(orders)
-  }, [])
+      setData(orders.sort((a,b) => a.date < b.date ? 1 : -1))
+  }, []);
+
+  const handleChangeStatus = (id, status) => {
+    const newData = [...data];
+    const index = newData.findIndex(order => order.id === id);
+    const editingOrder = newData.find(order => order.id === id);
+    editingOrder.status = status;
+    newData.splice(index, 1, editingOrder);
+    setData(newData);
+  }
+
+  const handleSort = e => {
+    const sortOrderValue = e.target.value;
+    const cloneOrders = [...orders];
+
+    cloneOrders.sort((a ,b) => {
+      if (sortOrderValue === 'newest') {
+        return a.date < b.date ? 1 : -1
+      } else {
+        return a.date > b.date ? 1 : -1
+      }
+    });
+
+    setData(cloneOrders);
+    setSortOrder(sortOrderValue);
+  }
 
   return (
     <Paper>
@@ -211,13 +237,13 @@ const LastOrders = () => {
         subtitle={`${orders.length} total`}
       >
         <span style={{fontWeight: 500}}>Sort by: </span>
-        <CustomSelect value={'newest'} onChange={() => {}} >
+        <CustomSelect value={sortOrder} onChange={handleSort} >
           <MenuItem value={'newest'}>Newest</MenuItem>
           <MenuItem value={'oldest'}>Oldest</MenuItem>
         </CustomSelect>
         <Button variant="outlined" className={classes.button}>New Entry</Button>
       </PaperHeader>
-      <OrdersTable orders={data} />
+      <OrdersTable orders={data} onChangeStatus={handleChangeStatus} />
     </Paper>
   );
 };

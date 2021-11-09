@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
-import { Box,
+import {
+  Box,
   TableContainer,
   Table,
   TableBody,
@@ -7,7 +8,8 @@ import { Box,
   TableCell,
   TablePagination,
   TableHead,
-  IconButton } from '@mui/material';
+  IconButton, MenuItem, Menu
+} from '@mui/material';
 import {makeStyles} from '@mui/styles';
 import dateFormat from "dateformat";
 import MoreVertIcon from '@mui/icons-material/MoreVert';
@@ -21,10 +23,28 @@ const useStyles = makeStyles({
   }
 })
 
-const OrdersTable = ({orders}) => {
+const OrdersTable = ({orders, onChangeStatus}) => {
   const classes = useStyles();
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(6);
+  const [editingOrder, setEditingOrder] = useState(null);
+  const [anchorEl, setAnchorEl] = useState(null);
+  const openMenu = Boolean(anchorEl);
+
+  const handleOpenMenu = (e, order) => {
+    setEditingOrder(order);
+    setAnchorEl(e.currentTarget);
+  };
+
+  const handleCloseMenu = () => {
+    setEditingOrder(null);
+    setAnchorEl(null);
+  };
+
+  const handleClickMenuItem = (id, status) => {
+    onChangeStatus(id, status);
+    handleCloseMenu();
+  }
 
   const handleChangePage = (event, newPage) => {
     setPage(newPage);
@@ -77,7 +97,8 @@ const OrdersTable = ({orders}) => {
                       </div>
                     </TableCell>
                     <TableCell className={classes.tableCell}>
-                      <IconButton onClick={() => {}}>
+                      <IconButton
+                        onClick={(e) => handleOpenMenu(e, row)}>
                         <MoreVertIcon sx={{color: '#9EA0A5'}} />
                       </IconButton>
 
@@ -109,6 +130,25 @@ const OrdersTable = ({orders}) => {
         onPageChange={handleChangePage}
         onRowsPerPageChange={handleChangeRowsPerPage}
       />
+
+      <Menu
+        anchorEl={anchorEl}
+        open={openMenu}
+        onClose={handleCloseMenu}
+      >
+        {editingOrder?.status !== 'delivered' &&
+          <MenuItem
+            onClick={() => handleClickMenuItem(editingOrder?.id, 'delivered')}
+          >Set status as "Delivered"</MenuItem>}
+        {editingOrder?.status !== 'pending' &&
+          <MenuItem
+            onClick={() => handleClickMenuItem(editingOrder?.id, 'pending')}
+          >Set status as "Pending"</MenuItem>}
+        {editingOrder?.status !== 'refund' &&
+          <MenuItem
+            onClick={() => handleClickMenuItem(editingOrder?.id, 'refund')}
+          >Set status as "Refund"</MenuItem>}
+      </Menu>
     </Box>
   );
 };
